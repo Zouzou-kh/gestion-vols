@@ -1,5 +1,5 @@
 <?php require_once '../includes/header.php';?>
-<?php 
+<?php
 if (isset($_POST)
     && !empty($Nom = $_POST['Nom'])
     && !empty($Prenom = $_POST['Prenom'])
@@ -8,18 +8,17 @@ if (isset($_POST)
     && !empty($Lieu_arriver = $_POST['Lieu_arriver'])
     && !empty($Date_aller = $_POST['Date_aller'])
     && !empty($Date_retour = $_POST['Date_retour'])
-    && !empty($Genre = $_POST['Genre'])
-    && !empty($Classe = $_POST['Classe'])
+    && !empty($Genre = $_POST['Id_genre'])
+    && !empty($Classe = $_POST['Id_classe'])
     // requette
-){
-    $sql ="INSERT INTO reservation (Nom, Prenom, Email, Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Classe, Genre)
-    VALUES (?,?,?,?,?,?,?,?,?)";
+) {
+    $sql = 'INSERT INTO reservation (Nom, Prenom, Email, Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
+    VALUES (?,?,?,?,?,?,?,?,?)';
     $stmt = $connexion->prepare($sql)
-    ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
-  }
-  else {
+                      ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
+} else {
     $message;
-  }
+}
 ?>
         <div class=" d-flex justify-content-center mt-5">
           <div
@@ -56,7 +55,7 @@ if (isset($_POST)
                     <input
                       type="text"
                       name="Lieu_depart"
-                      
+
                       class="form-control" required
                     />
                   </div>
@@ -65,7 +64,7 @@ if (isset($_POST)
                     <input
                       type="text"
                       name="Lieu_arriver"
-                      
+
                       class="form-control" required
                     />
                   </div>
@@ -76,7 +75,7 @@ if (isset($_POST)
                     <input
                       type="date"
                       name="Date_aller"
-                      
+
                       class="form-control" required
                     />
                   </div>
@@ -85,7 +84,7 @@ if (isset($_POST)
                     <input
                       type="date"
                       name="Date_retour"
-                      
+
                       class="form-control" required
                     />
                   </div>
@@ -93,17 +92,16 @@ if (isset($_POST)
                 <div class="row mt-2">
                 <div class="col-md-6">
                     <label for="">Genre</label>
-                    <select name="Genre"  class="form-control" required>
-                      <option value="1">Femme</option>
-                      <option value="2">Homme</option>
-                      <option value="3">Autre</option>
+                    <select name="Id_genre"  class="form-control" required>
+                      <option value="1">Homme</option>
+                      <option value="2">Femme</option>
                     </select>
                   </div>
                   <div class="col-md-6">
                     <label for="">Classe</label>
-                    <select name="Classe"  class="form-control" required>
-                      <option value="1">Economique</option>
-                      <option value="2">business</option>
+                    <select name="Id_classe"  class="form-control" required>
+                      <option value="1">business</option>
+                      <option value="2">Economique</option>
                       <option value="3">Simple</option>
                     </select>
                   </div>
@@ -119,5 +117,5 @@ if (isset($_POST)
               </form>
             </div>
           </div>
-        </div>  
+        </div>
     <?php require_once '../includes/footer.php';?>

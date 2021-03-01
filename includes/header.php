@@ -1,5 +1,4 @@
-<?php require_once '../database/DB.php'; 
-session_start()
+<?php require_once '../database/DB.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +17,7 @@ session_start()
   </head>
       <div class="main">
         <div class="small">
-          <a href="../views/login.php" class=" text-left btn btn-sm">Login</a>
+          <?php require_once '../views/smallnav.php';?>
         </div>
         <nav >
           <img src="../images/logo.png" width="100" height="80">

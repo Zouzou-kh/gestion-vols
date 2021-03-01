@@ -1,24 +1,25 @@
-<?php 
+<?php
+session_start();
 require_once '../database/DB.php';
- if (isset($_POST["submit"])) {
-   if (empty($_POST['username']) || empty($_POST['password'])) {
-     echo "erruer de connexion";
+if (isset($_POST['submit'])) {
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        echo 'erruer de connexion';
+    } else {
+        $_SESSION['username'] = $_POST['username'];
+        $username             = $_POST['username'];
+        $password             = sha1($_POST['password']);
+        $sql                  = 'SELECT * FROM user WHERE username=? AND password=?';
+        $stmt                 = $connexion->prepare($sql);
+        $stmt->execute([$username, $password]);
+        if ($user = $stmt->fetch()) {
+            $_SESSION['is_connected'] = true;
+            header('Location:admin_dash.php');
+        } else {
+            echo 'Error de Connexion';
+        }
     }
-    else{
-      $username = $_POST['username'];
-      $password = sha1($_POST['password']);
-      $sql = "SELECT * FROM user WHERE username=? AND password=?";
-      $stmt = $connexion->prepare($sql);
-      $stmt->execute([$username,$password]);
-      if ($user = $stmt->fetch()) {
-        echo "hello";
-      }
-      else {
-        echo "Error";
-      }
-    }
-  }
- ?>
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
