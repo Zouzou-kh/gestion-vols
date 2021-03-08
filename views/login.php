@@ -66,6 +66,7 @@ if (isset($_POST['submit'])) {
             </div>
           </form>
         </div>
+        <span>vous n'avez pas de compte?<a href="#">s'identifier</a></span>
       </div>
     </div>
   </body>

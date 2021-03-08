@@ -1,5 +1,7 @@
 <?php require_once '../includes/header.php';?>
 <?php
+if(isset($_POST['submit']))
+{
 if (isset($_POST)
     && !empty($Nom = $_POST['Nom'])
     && !empty($Prenom = $_POST['Prenom'])
@@ -18,6 +20,7 @@ if (isset($_POST)
                       ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
 } else {
     $message;
+}
 }
 ?>
         <div class=" d-flex justify-content-center mt-5">
