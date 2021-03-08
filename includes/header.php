@@ -1,4 +1,5 @@
-<?php require_once '../database/DB.php';
+<?php
+require_once '../database/DB.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +24,11 @@
           <img src="../images/logo.png" width="100" height="80">
           <ul>
             <li><a href="index.php">Acceuil</a></li>
-            <li><a href="../views/reservation.php">Reservation</a></li>
+            <?php if (isset($_SESSION)): ?>
+              <?php if ($_SESSION['role'] == 0): ?>
+              <li><a href="../views/reservation.php">Reservation</a></li>
+              <?php endif;?>
+            <?php endif;?>
             <li><a href="#">contact Us</a></li>
             <li><a href="#">Help Me</a></li>
           </ul>

@@ -1,8 +1,11 @@
 <?php require_once '../includes/header.php';?>
-      <div class="content mt-5 container">
+      <div class="content container">
+      <div class="d-flex justify-content-end btn btn-warnning">
+      <button class="btn btn-warning btn btn-lg"><a href="login.php">Reserver</a></button>
+      </div>
         <section class=" text-justify">
           <h1 class="text-center mb-4">Agence de Voyage</h1>
-          Tout simplement parce que c'est la meilleure source d'inspiration pour ceux qui rêvent d’évasion, ceux qui n'ont qu'un week-end, ceux qui cherchent un séjour pas cher, ceux qui ne veulent qu'un billet d'avion, ou ceux qui partent en voyage en famille. Grâce au moteur de recherche, le monde est à portée de clic. Vous pourrez aisément et en toute transparence comparer les avantages des destinations ainsi que les différents tarifs, en tenant compte des notes attribuées par les voyageurs pour éclairer vos choix. Laissez-vous guider... 
+          Tout simplement parce que c'est la meilleure source d'inspiration pour ceux qui rêvent d’évasion, ceux qui n'ont qu'un week-end, ceux qui cherchent un séjour pas cher, ceux qui ne veulent qu'un billet d'avion, ou ceux qui partent en voyage en famille. Grâce au moteur de recherche, le monde est à portée de clic. Vous pourrez aisément et en toute transparence comparer les avantages des destinations ainsi que les différents tarifs, en tenant compte des notes attribuées par les voyageurs pour éclairer vos choix. Laissez-vous guider...
 Pourquoi choisir notre agence de voyage ?
 
 Depuis des années, les équipes de lastminute.com négocient sans pitié pour vous garantir la meilleure offre au meilleur prix. C'est un engagement que nous mettons tout en œuvre pour respecter dans l'unique souci de satisfaire nos clients les plus exigeants. En choisissant notre site, c'est tout l'univers du voyage qui s'ouvre à vous, nous sommes en mesure de répondre au moindre de vos désirs d'ailleurs, sous toutes les formes possibles.
@@ -20,7 +23,7 @@ Les nombreux amateurs de voyages pas chers seront enchantés par la variété de
         <!-- content suivi -->
         <section class=" text-justify">
           <h1 class="text-center mb-4">Agence de Voyage</h1>
-          Tout simplement parce que c'est la meilleure source d'inspiration pour ceux qui rêvent d’évasion, ceux qui n'ont qu'un week-end, ceux qui cherchent un séjour pas cher, ceux qui ne veulent qu'un billet d'avion, ou ceux qui partent en voyage en famille. Grâce au moteur de recherche, le monde est à portée de clic. Vous pourrez aisément et en toute transparence comparer les avantages des destinations ainsi que les différents tarifs, en tenant compte des notes attribuées par les voyageurs pour éclairer vos choix. Laissez-vous guider... 
+          Tout simplement parce que c'est la meilleure source d'inspiration pour ceux qui rêvent d’évasion, ceux qui n'ont qu'un week-end, ceux qui cherchent un séjour pas cher, ceux qui ne veulent qu'un billet d'avion, ou ceux qui partent en voyage en famille. Grâce au moteur de recherche, le monde est à portée de clic. Vous pourrez aisément et en toute transparence comparer les avantages des destinations ainsi que les différents tarifs, en tenant compte des notes attribuées par les voyageurs pour éclairer vos choix. Laissez-vous guider...
 Pourquoi choisir notre agence de voyage ?
 
 Depuis des années, les équipes de lastminute.com négocient sans pitié pour vous garantir la meilleure offre au meilleur prix. C'est un engagement que nous mettons tout en œuvre pour respecter dans l'unique souci de satisfaire nos clients les plus exigeants. En choisissant notre site, c'est tout l'univers du voyage qui s'ouvre à vous, nous sommes en mesure de répondre au moindre de vos désirs d'ailleurs, sous toutes les formes possibles.

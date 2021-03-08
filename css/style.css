@@ -37,11 +37,11 @@ a:hover {
   text-decoration: none;
   color: #fff;
 }
+/*Small navbar*/
 .small {
   width: 100%;
   background-color: #0005;
   color: #fff;
-  display: flex;
 }
 /* login style button */
 .small .login {

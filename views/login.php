@@ -13,7 +13,13 @@ if (isset($_POST['submit'])) {
         $stmt->execute([$username, $password]);
         if ($user = $stmt->fetch()) {
             $_SESSION['is_connected'] = true;
-            header('Location:admin_dash.php');
+            $_SESSION['role']         = $user['role'];
+            $_SESSION['id']           = $user['Id'];
+            if ($_SESSION['role'] == 1) {
+                header('Location:admin_dash.php');
+            } else {
+                header('Location:client_dash.php');
+            }
         } else {
             echo 'Error de Connexion';
         }
@@ -66,7 +72,9 @@ if (isset($_POST['submit'])) {
             </div>
           </form>
         </div>
-        <span>vous n'avez pas de compte?<a href="#">s'identifier</a></span>
+        <div class="d-flex justify-content-center mt-2 mb-3">
+        <span>vous n'avez pas de compte ? <a href="register.php" style="text-decoration: none;"> S'identifier</a></span>
+        </div>
       </div>
     </div>
   </body>

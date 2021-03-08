@@ -1,26 +1,37 @@
 <?php require_once '../includes/header.php';?>
 <?php
-if(isset($_POST['submit']))
-{
-if (isset($_POST)
-    && !empty($Nom = $_POST['Nom'])
-    && !empty($Prenom = $_POST['Prenom'])
-    && !empty($Email = $_POST['Email'])
-    && !empty($Lieu_depart = $_POST['Lieu_depart'])
-    && !empty($Lieu_arriver = $_POST['Lieu_arriver'])
-    && !empty($Date_aller = $_POST['Date_aller'])
-    && !empty($Date_retour = $_POST['Date_retour'])
-    && !empty($Genre = $_POST['Id_genre'])
-    && !empty($Classe = $_POST['Id_classe'])
-    // requette
-) {
-    $sql = 'INSERT INTO reservation (Nom, Prenom, Email, Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
+session_start();
+if (isset($_SESSION['username'])) {
+    if (isset($_POST['submit'])) {
+        if (isset($_POST)
+            && !empty($Nom = $_POST['Nom'])
+            && !empty($Prenom = $_POST['Prenom'])
+            && !empty($Email = $_POST['Email'])
+            && !empty($Lieu_depart = $_POST['Lieu_depart'])
+            && !empty($Lieu_arriver = $_POST['Lieu_arriver'])
+            && !empty($Date_aller = $_POST['Date_aller'])
+            && !empty($Date_retour = $_POST['Date_retour'])
+            && !empty($Genre = $_POST['Id_genre'])
+            && !empty($Classe = $_POST['Id_classe'])
+            // requette
+        ) {
+            $sql = 'INSERT INTO reservation (Nom, Prenom, Email, Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
     VALUES (?,?,?,?,?,?,?,?,?)';
-    $stmt = $connexion->prepare($sql)
-                      ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
+            $stmt = $connexion->prepare($sql)
+                              ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
+            $message = '<div class="alert alert-success">
+        Resercation faite avec succés !
+        </div> ';
+        } else {
+            $message = '<div class="alert alert-danger">
+        Rservation  pas complete !
+        </div> ';
+
+        }
+    }
 } else {
-    $message;
-}
+    header('location:login.php');
+
 }
 ?>
         <div class=" d-flex justify-content-center mt-5">
@@ -35,6 +46,9 @@ if (isset($_POST)
               <h2 class="text-center">Reservation</h2>
             </div>
             <div class="card-body">
+              <?php if (!empty($message)): ?>
+                <?=$message?>
+              <?php endif;?>
               <form action="" method="POST">
                 <div class="row mt-2">
                   <div class="col-md-6">
