@@ -31,7 +31,7 @@ require_once '../database/DB.php';
           <img src="../images/logo.png" width="100" height="80">
           <ul>
             <li><a href="index.php">Acceuil</a></li>
-            <?php if (isset($_SESSION)): ?>
+            <?php if (isset($_SESSION['role'])): ?>
               <?php if ($_SESSION['role'] == 0): ?>
               <li><a href="../views/reservation.php">Reservation</a></li>
               <?php endif;?>

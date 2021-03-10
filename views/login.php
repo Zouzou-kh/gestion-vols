@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once '../database/DB.php';
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {

@@ -1,7 +1,8 @@
 <?php
-session_start();
-if (isset($_SESSION['username'])) {
-    require_once '../includes/header.php';
+require_once '../includes/header.php';
+if (isset($_SESSION['username']) && $_SESSION['role'] == 1) {
+    var_dump($_SESSION);
+    die();
     $sql = 'SELECT Id_r,Nom,Prenom, Username, Date_aller, Date_retour ,Lieu_depart, Lieu_arriver, libelle_c, libelle_g FROM reservation r
         INNER JOIN classe c ON r.Id_classe = c.Id
         INNER JOIN genre g ON r.Id_genre = g.Id

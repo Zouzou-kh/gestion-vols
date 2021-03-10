@@ -4,3 +4,4 @@ try {
 } catch (Exception $e) {
     echo 'Erruer de connexion' . $e->getMessage();
 }
+session_start();

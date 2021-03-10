@@ -6,9 +6,9 @@
   <?php else: ?>
         <a href="logout.php" class=" logout btn btn-sm">logout</a>
         <?php if ($_SESSION['role'] == 1): ?>
-        <a href="reservation_table.php" class="reserve btn btn-sm">Reservation</a>
+        <a href="admin_dash.php" class="reserve btn btn-sm">Reservation</a>
         <?php elseif ($_SESSION['role'] == 0): ?>
-        <a href="reservation_table.php" class="reserve btn btn-sm">Mes Reservation</a>
+        <a href="client_dash.php" class="reserve btn btn-sm">Mes Reservation</a>
         <?php endif?>
     <?php endif?>
 </div>

@@ -1,7 +1,7 @@
 <?php require_once '../includes/header.php';?>
 <?php
-session_start();
-if (isset($_SESSION['username']) && $_SESSION['role']==0 ) {
+if (isset($_SESSION['username']) && $_SESSION['role'] == 0) {
+    $id = $_SESSION['id'];
     if (isset($_POST['submit'])) {
         if (isset($_POST)
             && !empty($Lieu_depart = $_POST['Lieu_depart'])
@@ -12,10 +12,10 @@ if (isset($_SESSION['username']) && $_SESSION['role']==0 ) {
             && !empty($Classe = $_POST['Id_classe'])
             // requette
         ) {
-            $sql = 'INSERT INTO reservation (Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
-    VALUES (?,?,?,?,?,?,?,?,?)';
+            $sql = 'INSERT INTO reservation (Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre,id_user)
+    VALUES (?,?,?,?,?,?,?)';
             $stmt = $connexion->prepare($sql)
-                              ->execute([$Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
+                              ->execute([$Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre, $id]);
             $message = '<div class="alert alert-success">
         Resercation faite avec succés !
         </div> ';
