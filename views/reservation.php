@@ -1,12 +1,9 @@
 <?php require_once '../includes/header.php';?>
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if (isset($_SESSION['username']) && $_SESSION['role']==0 ) {
     if (isset($_POST['submit'])) {
         if (isset($_POST)
-            && !empty($Nom = $_POST['Nom'])
-            && !empty($Prenom = $_POST['Prenom'])
-            && !empty($Email = $_POST['Email'])
             && !empty($Lieu_depart = $_POST['Lieu_depart'])
             && !empty($Lieu_arriver = $_POST['Lieu_arriver'])
             && !empty($Date_aller = $_POST['Date_aller'])
@@ -15,10 +12,10 @@ if (isset($_SESSION['username'])) {
             && !empty($Classe = $_POST['Id_classe'])
             // requette
         ) {
-            $sql = 'INSERT INTO reservation (Nom, Prenom, Email, Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
+            $sql = 'INSERT INTO reservation (Date_aller, Date_retour, Lieu_depart, Lieu_arriver, Id_classe, Id_genre)
     VALUES (?,?,?,?,?,?,?,?,?)';
             $stmt = $connexion->prepare($sql)
-                              ->execute([$Nom, $Prenom, $Email, $Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
+                              ->execute([$Date_aller, $Date_retour, $Lieu_depart, $Lieu_arriver, $Classe, $Genre]);
             $message = '<div class="alert alert-success">
         Resercation faite avec succés !
         </div> ';
@@ -50,22 +47,6 @@ if (isset($_SESSION['username'])) {
                 <?=$message?>
               <?php endif;?>
               <form action="" method="POST">
-                <div class="row mt-2">
-                  <div class="col-md-6">
-                    <label for="">Nom</label>
-                    <input type="text" name=" Nom"  class="form-control" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="">prenom</label>
-                    <input type="text" name="Prenom"  class="form-control" required>
-                  </div>
-                </div>
-                <div class="row mt-2">
-                  <div class="col">
-                    <label for="">email</label>
-                    <input type="email" name="Email"  class="form-control" required>
-                  </div>
-                </div>
                 <div class="row mt-2">
                   <div class="col-md-6">
                     <label for="">De(ville ou pays)</label>
