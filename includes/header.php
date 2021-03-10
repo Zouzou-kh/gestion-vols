@@ -7,13 +7,20 @@ require_once '../database/DB.php';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/bootstrap.css" />
-    <link rel="stylesheet" href="../css/bootstrap-min.css" />
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/all.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/solid.min.css" />
     <link rel="stylesheet" href="../css/all.min.css" />
-
     <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/all.js"></script>
+    <script src="../js/all.min.js"></script>
+    <script src="../js/solid.js"></script>
+    <script src="../js/solid.min.js"></script>
     <title>Document</title>
   </head>
       <div class="main">

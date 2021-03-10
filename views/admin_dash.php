@@ -13,11 +13,34 @@ if (isset($_SESSION['username'])) {
     header('location:login.php');
 }
 ?>
-
+<!-- Model  -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Justifications</h5>
+        <!-- <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close" style="background-color:dimgrey; color:white;" >X</button> -->
+      </div>
+      <div class="modal-body">
+            <form action="" method="get">
+                <div class="col mb-5 text-center">
+                    <label for="" ></label>
+                    <input type="text" name="justify" class="form-control" style="width:100%; height:70px;" placeholder="ecrire ici ...."/>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button type="button" class="btn btn-danger btn-close mr-3" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    <button type="submit" class="btn btn-primary" >Envoyer</button>
+                </div>
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fin Modal  -->
 <div class="container-fluids mt-5">
     <div class="card m-3">
         <div class="card-header">
-            <h2 class="text-center">Les Reservation</h2>
+            <h2 class="text-center">Les Reservations</h2>
         </div>
         <div class="card-body">
             <table class="table">
@@ -53,7 +76,9 @@ if (isset($_SESSION['username'])) {
                 <td>
                 <form action="" method="GET">
                   <a href="<?=$reserver->Id_r?>" type="submit" name="submit" value="Accepter" class="btn btn-success btn-sm">Accepter</a>
-                  <a href="<?=$reserver->Id_r?>" type="submit" name="submit" value="Rejeter" class="btn btn-danger btn-sm">Rejeter</a>
+                  <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Anuuler
+                  </button>
                 </form>
                 </td>
                 </tr>
